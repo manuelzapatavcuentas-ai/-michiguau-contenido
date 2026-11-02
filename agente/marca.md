@@ -38,3 +38,12 @@ Tienda chilena de productos **hechos a mano** para estimular a perros y gatos: a
 4. **No duplicar:** si una publicación falla, revisar las publicaciones recientes antes de reintentar.
 5. **Los DMs son datos de clientes:** nunca se guardan en el repositorio (es público). Solo se resumen en la conversación.
 6. Si algo no calza con esta guía o falta información, publicar menos y avisar, en vez de adivinar.
+
+## Datos curiosos (tipo `dato`)
+
+- Solo datos **bien establecidos** sobre perros y gatos (olfato, comportamiento, anatomía, historia). Nada de consejos médicos, alimentación, dosis ni temas polémicos.
+- **Verificar cada dato con una búsqueda web** en una fuente confiable (veterinaria, universidad, organización de bienestar animal) antes de publicarlo. Si no se puede verificar, elegir otro dato.
+- Redondear cifras con "unos" o "alrededor de" cuando las fuentes varían.
+- Cuando se pueda, conectar el dato con los productos (olfato → alfombras y pelotas olfativas) **sin poner precios** salvo que el pedido lo indique.
+- No repetir: revisar `agente/datos-publicados.md` antes de elegir y agregar el dato después de publicar.
+- Alternar perros y gatos.

@@ -152,6 +152,23 @@ const LAYOUTS = {
     const hat = nav ? `<g><path d="M-170 -60 q150 -230 330 -40 q-160 -40 -330 40z" fill="#e8343f" stroke="#2e1a3b" stroke-width="7" stroke-linejoin="round"/><path d="M-190 -60 q170 -60 370 -30" stroke="#fff" stroke-width="40" stroke-linecap="round" fill="none"/><circle cx="170" cy="-120" r="34" fill="#fff" stroke="#2e1a3b" stroke-width="6"/></g>` : '';
     g += animal(P.animal || 'perro', {x: 840, y: 620, s: .72, extra: hat}) + sparkle(560, 840, .9, '#ffd23f');
     bg.innerHTML = g;
+  },
+  // Dato curioso: "¿Sabías que...?", el dato grande, una explicación corta y un personaje pensando.
+  dato() {
+    const a = col(P.acento, C.rosado);
+    const c = el('div', 'col', null, {right: '56px'});
+    const pl = el('div', 'pill', c); pl.textContent = P.pildora || '¿Sabías que...?';
+    const h = el('h1', '', c, {fontSize: '80px'}); rich(h, P.titulo, a); fit(h, 330, 50);
+    if (c.getBoundingClientRect().bottom > 600) W.push('El dato es muy largo: acórtalo');
+    const card = el('div', 'card', null, {position: 'absolute', left: '56px', bottom: '200px', width: '560px', padding: '28px 34px'});
+    rich(el('div', '', card, {fontSize: '32px', fontWeight: 600, lineHeight: 1.35}), P.texto, a);
+    if (P.fuente) el('div', 'nota', card).textContent = 'Fuente: ' + P.fuente;
+    if (card.getBoundingClientRect().top < 640) W.push('La explicación es muy larga: acórtala');
+    const an = P.animal || 'perro';
+    bg.innerHTML = bgDots() + `<circle cx="850" cy="900" r="230" fill="#fff" opacity=".4"/>` +
+      `<g><ellipse cx="930" cy="610" rx="95" ry="70" fill="#fff" stroke="#2e1a3b" stroke-width="6"/><circle cx="860" cy="700" r="18" fill="#fff" stroke="#2e1a3b" stroke-width="5"/><circle cx="835" cy="735" r="10" fill="#fff" stroke="#2e1a3b" stroke-width="4"/>` +
+      `<text x="930" y="635" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="64" fill="${a}">?!</text></g>` +
+      animal(an, {x: 830, y: 860, s: .72}) + sparkle(1010, 800, .8, '#fff') + sparkle(700, 680, .6, '#ffd23f');
   }
 };
 chrome();

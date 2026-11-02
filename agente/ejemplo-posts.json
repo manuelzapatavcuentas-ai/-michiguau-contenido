@@ -1,72 +1,130 @@
 {
-  "_ayuda": "Ejemplo con los 5 tipos. Copia este archivo a publicaciones/AAAA-MM-DD-tema/posts.json, edítalo y renderiza. Colores: amarillo, rosado, rosado_claro, naranjo, morado, turquesa, celeste, menta, rojo, verde, blanco, tinta. Animales: perro, perro_claro, perro_cafe, gato, gato_blanco. *texto* = énfasis de color.",
+  "_ayuda": "Ejemplo con los 6 tipos (producto, pov, educativo, aviso, fecha, dato). Copia este archivo a publicaciones/AAAA-MM-DD-tema/posts.json, edítalo y renderiza. Colores: amarillo, rosado, rosado_claro, naranjo, morado, turquesa, celeste, menta, rojo, verde, blanco, tinta. Animales: perro, perro_claro, perro_cafe, gato, gato_blanco. *texto* = énfasis de color.",
   "posts": [
     {
       "id": "01-pelotas",
       "tipo": "producto",
-      "fondo": "amarillo", "acento": "rosado",
-      "etiqueta": "NUEVO STOCK", "etiqueta_color": "rosado",
+      "fondo": "amarillo",
+      "acento": "rosado",
+      "etiqueta": "NUEVO STOCK",
+      "etiqueta_color": "rosado",
       "titulo": "Pelotas\nolfativas",
       "bajada": "Esconde sus premios entre los pliegues y deja que su nariz haga el resto.",
-      "filas": [["15 cm", "$7.500"], ["20 cm", "$10.500"]],
+      "filas": [
+        [
+          "15 cm",
+          "$7.500"
+        ],
+        [
+          "20 cm",
+          "$10.500"
+        ]
+      ],
       "nota": "Polar cosido · hechas a mano · uso supervisado",
-      "objeto": "pelota", "animal": "perro",
-      "cta": "Pide la tuya por DM o WhatsApp", "cta_sub": "Envíos a todo Chile", "cta_color": "morado",
+      "objeto": "pelota",
+      "animal": "perro",
+      "cta": "Pide la tuya por DM o WhatsApp",
+      "cta_sub": "Envíos a todo Chile",
+      "cta_color": "morado",
       "caption": "Pelotas Olfativas 🐽🎾🌈\n¡Llegó stock en variedad de colores! ✨\n\n• 15 cm: $7.500\n• 20 cm: $10.500\n\nPRODUCTO PARA USAR BAJO SUPERVISIÓN 👀\n\nPide la tuya al DM 📩 o al WSP 📲\n\n#michiguaupet #pelotaolfativa #hechoamano #pyme #chile"
     },
     {
       "id": "02-pov",
       "tipo": "pov",
-      "fondo": "celeste", "acento": "rosado",
+      "fondo": "celeste",
+      "acento": "rosado",
       "pildora": "POV",
       "titulo": "Trabajas en control de calidad y te lo tomas *MUY* en serio",
-      "sello": "APROBADO", "animal": "perro_claro",
-      "cta": "Revisado alfombra por alfombra", "cta_sub": "Hecho a mano",
+      "sello": "APROBADO",
+      "animal": "perro_claro",
+      "cta": "Revisado alfombra por alfombra",
+      "cta_sub": "Hecho a mano",
       "caption": "POV: trabajas en control de calidad y te lo tomas MUY en serio 🧐📋\n\n#michiguaupet #alfombraolfativa #vidadeperros #chile"
     },
     {
       "id": "03-educativo",
       "tipo": "educativo",
-      "fondo": "menta", "acento": "naranjo",
+      "fondo": "menta",
+      "acento": "naranjo",
       "titulo": "¿Tu peludito come *demasiado rápido*?",
-      "antes": "Antes", "despues": "Con alfombra olfativa",
-      "puntos": ["Come más lento", "Baja su ansiedad", "Ejercita su mente"],
-      "cta": "Prueba una alfombra olfativa", "cta_sub": "Consulta por DM", "cta_color": "naranjo",
+      "antes": "Antes",
+      "despues": "Con alfombra olfativa",
+      "puntos": [
+        "Come más lento",
+        "Baja su ansiedad",
+        "Ejercita su mente"
+      ],
+      "cta": "Prueba una alfombra olfativa",
+      "cta_sub": "Consulta por DM",
+      "cta_color": "naranjo",
       "caption": "¿Tu peludito come demasiado rápido? 🍽️💨\n\n#michiguaupet #alfombraolfativa #bienestaranimal #chile"
     },
     {
       "id": "04-aviso",
       "tipo": "aviso",
-      "fondo": "morado", "acento": "rosado",
+      "fondo": "morado",
+      "acento": "rosado",
       "titulo": "RECUERDA",
-      "lineas": ["Entrega *gratis* en estaciones de metro", "Envíos a *todo Chile*"],
-      "escena": "metro", "animal": "gato_blanco",
-      "cta": "Coordina tu entrega por WhatsApp", "cta_sub": "Link en la bio", "cta_color": "amarillo",
+      "lineas": [
+        "Entrega *gratis* en estaciones de metro",
+        "Envíos a *todo Chile*"
+      ],
+      "escena": "metro",
+      "animal": "gato_blanco",
+      "cta": "Coordina tu entrega por WhatsApp",
+      "cta_sub": "Link en la bio",
+      "cta_color": "amarillo",
       "caption": "RECUERDA ‼️\n\n🚇 Entregamos en estaciones de metro SIN costo adicional\n📦 Envíos a todo Chile 🇨🇱\n\n#michiguaupet #pyme #mascotas #chile"
     },
     {
       "id": "05-fecha",
       "tipo": "fecha",
-      "fondo": "rojo", "acento": "rojo", "tema": "navidad",
+      "fondo": "rojo",
+      "acento": "rojo",
+      "tema": "navidad",
       "titulo": "Su regalo de Navidad, hecho a mano",
       "texto": "Fabricamos cada pedido en *20 días hábiles*. Para recibirlo antes del 24:",
       "destacado": "Pide antes del\n20 de noviembre",
       "animal": "perro",
-      "cta": "Resérvalo por DM o WhatsApp", "cta_sub": "Cupos limitados", "cta_color": "verde",
+      "cta": "Resérvalo por DM o WhatsApp",
+      "cta_sub": "Cupos limitados",
+      "cta_color": "verde",
       "caption": "🎄 Su regalo de Navidad, hecho a mano 🎁\n\n#michiguaupet #navidadmascotas #hechoamano #chile"
     },
     {
       "id": "06-corazon",
       "tipo": "producto",
-      "fondo": "rosado_claro", "acento": "rosado",
-      "etiqueta": "ENTREGA INMEDIATA", "etiqueta_color": "amarillo",
+      "fondo": "rosado_claro",
+      "acento": "rosado",
+      "etiqueta": "ENTREGA INMEDIATA",
+      "etiqueta_color": "amarillo",
       "kicker": "Alfombra olfativa",
       "titulo": "Mini\nCorazón",
-      "filas": [["25 × 25 cm", "$18.990"]],
+      "filas": [
+        [
+          "25 × 25 cm",
+          "$18.990"
+        ]
+      ],
       "nota": "Base antideslizante · fabricación 20 días hábiles",
-      "objeto": "corazon", "animal": "gato",
-      "cta": "Encárgala por DM o WhatsApp", "cta_sub": "Hecha a mano",
+      "objeto": "corazon",
+      "animal": "gato",
+      "cta": "Encárgala por DM o WhatsApp",
+      "cta_sub": "Hecha a mano",
       "caption": "Alfombra Olfativa Mini Corazón 🩷💛\n\n#michiguaupet #alfombraolfativa #chile"
+    },
+    {
+      "id": "07-dato",
+      "tipo": "dato",
+      "fondo": "celeste",
+      "acento": "rosado",
+      "pildora": "¿Sabías que...?",
+      "titulo": "La nariz de un perro tiene unos *300 millones* de receptores olfativos",
+      "texto": "Las personas tenemos alrededor de 6 millones. Por eso olfatear lo cansa y lo relaja tanto como un paseo.",
+      "animal": "perro",
+      "cta": "Juega con su olfato en casa",
+      "cta_sub": "Consulta por DM",
+      "caption": "¿Sabías que...? 🐶👃\n\nLa nariz de un perro tiene unos 300 millones de receptores olfativos. ¡Las personas tenemos alrededor de 6 millones! 🤯\n\nPor eso olfatear lo cansa y lo relaja tanto como un paseo ✨\n\n¿Lo sabías? Cuéntanos en los comentarios 👇\n\n#michiguaupet #datoscuriosos #perros #alfombraolfativa #chile"
     }
   ]
 }
