@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#ddd;font-family:'Poppins',sans-serif;color:#2e1a3b}
+  #post{width:1080px;height:1350px;position:relative;overflow:hidden}
+  #bg{position:absolute;inset:0}
+  .brand{position:absolute;left:56px;top:52px;display:flex;align-items:center;gap:14px;background:#fff;border:5px solid #2e1a3b;
+    border-radius:999px;padding:12px 30px 12px 18px;font-weight:700;font-size:34px;box-shadow:6px 6px 0 #2e1a3b;z-index:3}
+  .brand .dot{width:40px;height:40px;border-radius:50%;border:4px solid #2e1a3b}
+  .brand small{font-size:26px;color:#ff4fa3}
+  .tag{position:absolute;right:56px;top:60px;font-weight:700;font-size:28px;padding:12px 26px;border-radius:999px;
+    border:5px solid #2e1a3b;box-shadow:6px 6px 0 #2e1a3b;z-index:3}
+  .col{position:absolute;left:56px;top:180px;display:flex;flex-direction:column;gap:22px;z-index:2}
+  h1{font-weight:700;line-height:1.04;letter-spacing:-1px}
+  .stroke{-webkit-text-stroke:3px #2e1a3b;paint-order:stroke fill}
+  .kicker{font-size:40px;font-weight:700}
+  .bajada{font-size:36px;font-weight:500;line-height:1.3}
+  .pill{align-self:flex-start;background:#ffd23f;border:5px solid #2e1a3b;border-radius:999px;padding:10px 28px;font-weight:700;font-size:32px;box-shadow:5px 5px 0 #2e1a3b}
+  .card{background:#fff;border:6px solid #2e1a3b;border-radius:40px;box-shadow:10px 10px 0 #2e1a3b;z-index:2}
+  .cta{position:absolute;left:56px;right:56px;bottom:56px;border-radius:36px;padding:30px 40px;display:flex;justify-content:space-between;
+    align-items:center;font-weight:700;font-size:36px;z-index:3}
+  .cta .sub{font-weight:500;font-size:28px;opacity:.85;white-space:nowrap;margin-left:24px}
+  .row{display:flex;justify-content:space-between;font-size:40px;font-weight:700;padding:10px 0}
+  .row + .row{border-top:4px dashed #e6d7c6}
+  .nota{font-size:26px;font-weight:500;opacity:.75;margin-top:8px}
+  svg{display:block}
+</style>
+</head>
+<body>
+<div id="post"><svg id="bg" width="1080" height="1350" viewBox="0 0 1080 1350"></svg></div>
+<script src="ilustraciones.js"></script>
+<script>
+const W = window.WARN = [];
+const P = window.POST || {};
+const C = {amarillo:'#ffd23f',rosado:'#ff4fa3',rosado_claro:'#ffd0e6',naranjo:'#ff7a1a',morado:'#6c3ce1',turquesa:'#16bfae',
+  celeste:'#cfeaff',menta:'#c9f5e7',rojo:'#d93a4b',verde:'#2fae66',blanco:'#ffffff',tinta:'#2e1a3b',crema:'#fff6ec'};
+const col = (n, d) => C[n] || n || d;
+const post = document.getElementById('post'), bg = document.getElementById('bg');
+const el = (tag, cls, parent, style) => { const e = document.createElement(tag); if (cls) e.className = cls; if (style) Object.assign(e.style, style); (parent || post).appendChild(e); return e; };
+// "*palabra*" -> énfasis de color. Texto seguro (sin HTML).
+function rich(node, text, accent) {
+  String(text || '').split(/(\*[^*]+\*)/).forEach(part => {
+    if (/^\*[^*]+\*$/.test(part)) { const s = document.createElement('span'); s.textContent = part.slice(1, -1); s.style.color = accent; node.appendChild(s); }
+    else part.split('\n').forEach((l, i) => { if (i) node.appendChild(document.createElement('br')); node.appendChild(document.createTextNode(l)); });
+  });
+  return node;
+}
+// Achica la fuente hasta que el bloque quepa en maxH (y maxW).
+function fit(node, maxH, minSize = 40) {
+  let fs = parseFloat(getComputedStyle(node).fontSize);
+  while ((node.getBoundingClientRect().height > maxH || node.scrollWidth > node.clientWidth + 2) && fs > minSize) { fs -= 4; node.style.fontSize = fs + 'px'; }
+  if (node.getBoundingClientRect().height > maxH) W.push('Texto demasiado largo: "' + node.textContent.slice(0, 40) + '…"');
+}
+function chrome() {
+  post.style.background = col(P.fondo, C.amarillo);
+  const b = el('div', 'brand'); el('div', 'dot', b, {background: col(P.acento, C.rosado)}); b.appendChild(document.createTextNode('MichiGuau')); el('small', '', b).textContent = '.pet';
+  if (P.etiqueta) { const t = el('div', 'tag', null, {background: col(P.etiqueta_color, C.rosado), color: P.etiqueta_color === 'amarillo' || P.etiqueta_color === 'blanco' ? C.tinta : '#fff'}); t.textContent = P.etiqueta; }
+  const c = el('div', 'cta', null, {background: col(P.cta_color, C.tinta), color: ['amarillo','blanco','menta','celeste','rosado_claro'].includes(P.cta_color) ? C.tinta : '#fff'});
+  const m = el('span', '', c); m.textContent = P.cta || 'Escríbenos por DM o WhatsApp';
+  if (P.cta_sub) { const s = el('span', 'sub', c); s.textContent = P.cta_sub; }
+}
+const ANIMAL = {
+  perro: {type:'dog', fur:'#f4c27f', fur2:'#a8693e', eye:'#6c3ce1'},
+  perro_claro: {type:'dog', fur:'#f7e3c9', fur2:'#c9a27c', eye:'#2f6fb5'},
+  perro_cafe: {type:'dog', fur:'#d9a066', fur2:'#8a5530', eye:'#5a3a8a'},
+  gato: {type:'cat', fur:'#f6b46a', fur2:'#c97a33', eye:'#2fae66'},
+  gato_blanco: {type:'cat', fur:'#ffffff', fur2:'#ff9ac8', eye:'#16bfae'}
+};
+const animal = (name, o) => chibi(Object.assign({}, ANIMAL[name] || ANIMAL.perro, o));
+const bgDots = () => dots(col(P.acento, C.naranjo));
+
+const LAYOUTS = {
+  // Ficha de producto: título a la izquierda, ilustración a la derecha, tarjeta de precios abajo.
+  producto() {
+    const a = col(P.acento, C.rosado);
+    const c = el('div', 'col', null, {maxWidth: '560px'});
+    if (P.kicker) { const k = el('div', 'kicker', c, {color: a}); k.textContent = P.kicker; }
+    const h = el('h1', 'stroke', c, {fontSize: '112px', color: '#fff'}); rich(h, P.titulo, C.tinta);
+    if (P.bajada) { const s = el('div', 'bajada', c, {maxWidth: '440px'}); rich(s, P.bajada, a); }
+    fit(h, 260, 64);
+    if (c.getBoundingClientRect().bottom > 790) W.push('La columna de títulos invade la tarjeta: acorta título o bajada');
+    const card = el('div', 'card', null, {position: 'absolute', left: '56px', bottom: '200px', width: '540px', padding: '26px 36px'});
+    (P.filas || []).forEach(f => { const r = el('div', 'row', card); el('span', '', r).textContent = f[0]; const v = el('span', '', r, {color: a}); v.textContent = f[1]; });
+    if (P.nota) el('div', 'nota', card).textContent = P.nota;
+    let g = bgDots() + `<circle cx="830" cy="640" r="300" fill="#fff" opacity=".45"/>`;
+    const obj = P.objeto || 'pelota', an = P.animal || 'perro';
+    if (obj === 'pelota') g += ball(800, 850, 165, ['#ff4fa3','#ffd23f','#16bfae','#6c3ce1','#ff7a1a']) + animal(an, {x: 790, y: 560, s: .85, expr: 'closed'});
+    else if (obj === 'corazon') g += `<path d="${heartPath(800,640,230)}" fill="#ff4fa3" stroke="#2e1a3b" stroke-width="8"/>` + ruffles(heartPts(800,640,185,40), ['#ff4fa3','#ff7fb7','#ffd23f','#ffe58a'], 26) + animal(an, {x: 900, y: 950, s: .52});
+    else if (obj === 'alfombra') { const p = []; for (let y = 0; y < 4; y++) for (let x = 0; x < 5; x++) p.push([670 + x * 66 + (y % 2) * 33, 830 + y * 44]); g += `<rect x="630" y="790" width="400" height="210" rx="34" fill="${a}" stroke="#2e1a3b" stroke-width="7"/>` + ruffles(p, [a, '#ffd23f', '#fff'], 28) + animal(an, {x: 830, y: 560, s: .8}); }
+    else g += animal(an, {x: 820, y: 700, s: 1});
+    g += sparkle(960, 330, 1.2, '#fff') + sparkle(985, 1010, .9, '#16bfae');
+    bg.innerHTML = g;
+  },
+  // Humor tipo "POV": título arriba, personaje inspector sobre una alfombra.
+  pov() {
+    const a = col(P.acento, C.rosado);
+    const c = el('div', 'col', null, {right: '56px'});
+    if (P.pildora) el('div', 'pill', c).textContent = P.pildora;
+    const h = el('h1', '', c, {fontSize: '78px'}); rich(h, P.titulo, a); fit(h, 280, 52);
+    const p = []; for (let y = 0; y < 4; y++) for (let x = 0; x < 11; x++) p.push([150 + x * 72 + (y % 2) * 36, 990 + y * 40]);
+    bg.innerHTML = bgDots() + `<rect x="110" y="950" width="860" height="200" rx="40" fill="${a}" stroke="#2e1a3b" stroke-width="7"/>` + ruffles(p, [a, '#ff9ac8', '#ffd0e6'], 30) +
+      animal(P.animal || 'perro_claro', {x: 540, y: 700, s: 1, expr: 'serious', extra: `<g><circle cx="-82" cy="42" r="56" fill="none" stroke="#2e1a3b" stroke-width="8"/><circle cx="82" cy="42" r="56" fill="none" stroke="#2e1a3b" stroke-width="8"/><path d="M-26 40 h52" stroke="#2e1a3b" stroke-width="8"/></g><g transform="translate(150 230) rotate(12)"><rect x="-60" y="-80" width="120" height="160" rx="12" fill="#fff" stroke="#2e1a3b" stroke-width="6"/><rect x="-28" y="-92" width="56" height="26" rx="8" fill="#16bfae" stroke="#2e1a3b" stroke-width="5"/><path d="M-34 -30 h68 M-34 0 h68 M-34 30 h46" stroke="#2e1a3b" stroke-width="6" stroke-linecap="round"/></g>`}) +
+      (P.sello ? (() => { const fs = P.sello.length > 9 ? 42 : 50, w = Math.min(380, Math.round(P.sello.length * fs * 0.68 + 60)); return `<g transform="translate(${1040 - w / 2} 790) rotate(-12)"><rect x="${-w / 2}" y="-52" width="${w}" height="104" rx="18" fill="#cfeaff" fill-opacity=".85" stroke="#2fae66" stroke-width="9"/><text x="0" y="${fs * 0.36}" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="${fs}" fill="#2fae66"></text></g>`; })() : '');
+    if (P.sello) bg.querySelector('text').textContent = P.sello;
+  },
+  // Educativo: pregunta arriba, comparación antes/después, tres puntos numerados.
+  educativo() {
+    const a = col(P.acento, C.naranjo);
+    const c = el('div', 'col', null, {right: '56px'});
+    const h = el('h1', '', c, {fontSize: '84px'}); rich(h, P.titulo, a); fit(h, 220, 52);
+    const q = []; for (let y = 0; y < 4; y++) for (let x = 0; x < 5; x++) q.push([640 + x * 60 + (y % 2) * 30, 700 + y * 40]);
+    const t = (x, s) => `<text x="${x}" y="480" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="34" fill="#2e1a3b"></text>`;
+    bg.innerHTML = bgDots() +
+      `<rect x="56" y="420" width="460" height="420" rx="40" fill="#fff" opacity=".6" stroke="#2e1a3b" stroke-width="5" stroke-dasharray="14 12"/>` + t(286) +
+      animal(P.animal || 'perro_cafe', {x: 286, y: 640, s: .5}) +
+      `<path d="M190 600 l-30 -20 M200 580 l-20 -30 M380 600 l30 -20 M372 580 l20 -30" stroke="#2e1a3b" stroke-width="6" stroke-linecap="round"/>` +
+      `<rect x="564" y="420" width="460" height="420" rx="40" fill="#fff" stroke="#2e1a3b" stroke-width="6"/>` + t(794) +
+      `<rect x="620" y="680" width="350" height="140" rx="28" fill="#16bfae" stroke="#2e1a3b" stroke-width="6"/>` + ruffles(q, ['#16bfae', '#7fe3d6', '#ffd23f'], 24) +
+      animal(P.animal || 'perro_cafe', {x: 794, y: 600, s: .5, expr: 'closed'}) + sparkle(985, 560, .6, '#ffd23f');
+    const labels = bg.querySelectorAll('text'); labels[0].textContent = P.antes || 'Antes'; labels[1].textContent = P.despues || 'Después';
+    if (c.getBoundingClientRect().bottom > 410) W.push('El título del educativo invade los paneles: acórtalo');
+    const card = el('div', 'card', null, {position: 'absolute', left: '56px', right: '56px', top: '880px', padding: '28px 40px', display: 'flex', gap: '26px'});
+    const cs = [C.rosado, C.turquesa, C.morado];
+    (P.puntos || []).slice(0, 3).forEach((p, i) => { const d = el('div', '', card, {flex: 1}); el('div', '', d, {fontSize: '54px', fontWeight: 700, color: cs[i]}).textContent = i + 1; el('div', '', d, {fontSize: '30px', fontWeight: 700, lineHeight: 1.2}).textContent = p; });
+  },
+  // Aviso corto: título grande, tarjeta con 1-3 líneas, escena ilustrada.
+  aviso() {
+    const a = col(P.acento, C.rosado);
+    const h = el('h1', 'stroke', null, {position: 'absolute', left: '56px', top: '180px', right: '56px', fontSize: '140px', color: col(P.titulo_color, C.amarillo), zIndex: 2}); rich(h, P.titulo, a); fit(h, 200, 64);
+    const card = el('div', 'card', null, {position: 'absolute', left: '56px', top: '400px', width: '620px', padding: '30px 36px'});
+    (P.lineas || []).slice(0, 3).forEach((l, i) => { if (i) el('div', '', card, {height: '4px', background: '#eee', margin: '20px 0', borderRadius: '4px'}); rich(el('div', '', card, {fontSize: '42px', fontWeight: 700, lineHeight: 1.15}), l, a); });
+    if (card.getBoundingClientRect().bottom > 700) W.push('La tarjeta del aviso es muy alta y puede tapar la ilustración');
+    let g = bgDots();
+    if ((P.escena || 'metro') === 'metro') g += `<g transform="translate(700 860)"><rect x="-300" y="-150" width="560" height="260" rx="60" fill="#ffd23f" stroke="#2e1a3b" stroke-width="8"/><rect x="-250" y="-100" width="140" height="100" rx="20" fill="#cfeaff" stroke="#2e1a3b" stroke-width="6"/><rect x="-80" y="-100" width="140" height="100" rx="20" fill="#cfeaff" stroke="#2e1a3b" stroke-width="6"/><rect x="90" y="-100" width="120" height="100" rx="20" fill="#cfeaff" stroke="#2e1a3b" stroke-width="6"/><rect x="-300" y="40" width="560" height="30" fill="#ff4fa3"/><circle cx="-200" cy="120" r="34" fill="#2e1a3b"/><circle cx="160" cy="120" r="34" fill="#2e1a3b"/></g><path d="M300 1000 h740" stroke="#fff" stroke-width="10" stroke-dasharray="40 20"/>`;
+    g += animal(P.animal || 'gato_blanco', {x: 330, y: 900, s: .62, extra: `<g transform="translate(150 260)"><rect x="-70" y="-60" width="140" height="120" rx="14" fill="#e8c59a" stroke="#2e1a3b" stroke-width="7"/><path d="M-70 -20 h140 M0 -60 v120" stroke="#2e1a3b" stroke-width="6"/><path d="M-20 -60 q20 -40 40 0" fill="none" stroke="#ff4fa3" stroke-width="8"/></g>`});
+    g += sparkle(960, 470, 1, '#ffd23f');
+    bg.innerHTML = g;
+  },
+  // Fecha especial: título, tarjeta con texto y dato destacado, personaje con regalo.
+  fecha() {
+    const a = col(P.acento, C.rojo), nav = P.tema === 'navidad';
+    const h = el('h1', 'stroke', null, {position: 'absolute', left: '56px', top: '180px', right: '56px', fontSize: '86px', color: '#fff', zIndex: 2}); rich(h, P.titulo, C.amarillo); fit(h, 200, 56);
+    const card = el('div', 'card', null, {position: 'absolute', left: '56px', top: '420px', width: '560px', padding: '28px 34px'});
+    rich(el('div', '', card, {fontSize: '30px', fontWeight: 600, lineHeight: 1.35}), P.texto, a);
+    if (P.destacado) rich(el('div', '', card, {fontSize: '52px', fontWeight: 700, color: a, marginTop: '12px', lineHeight: 1.1}), P.destacado, C.tinta);
+    let g = '';
+    for (let i = 0; i < 40; i++) g += nav ? `<circle cx="${(i * 197) % 1080}" cy="${(i * 331) % 1350}" r="${4 + (i % 4) * 3}" fill="#fff" opacity=".5"/>` : `<rect x="${(i * 197) % 1080}" y="${(i * 331) % 1350}" width="14" height="24" rx="4" fill="${['#ffd23f','#ff4fa3','#16bfae','#fff'][i % 4]}" opacity=".6" transform="rotate(${i * 23} ${(i * 197) % 1080} ${(i * 331) % 1350})"/>`;
+    g += `<g transform="translate(830 1000)"><rect x="-120" y="-100" width="240" height="190" rx="18" fill="#2fae66" stroke="#2e1a3b" stroke-width="8"/><rect x="-20" y="-100" width="40" height="190" fill="#ffd23f" stroke="#2e1a3b" stroke-width="5"/><rect x="-140" y="-130" width="280" height="50" rx="14" fill="#2fae66" stroke="#2e1a3b" stroke-width="8"/><path d="M0 -130 q-70 -80 -90 -20 q20 30 90 20 q70 10 90 -20 q-20 -60 -90 20z" fill="#ffd23f" stroke="#2e1a3b" stroke-width="6"/></g>`;
+    const hat = nav ? `<g><path d="M-170 -60 q150 -230 330 -40 q-160 -40 -330 40z" fill="#e8343f" stroke="#2e1a3b" stroke-width="7" stroke-linejoin="round"/><path d="M-190 -60 q170 -60 370 -30" stroke="#fff" stroke-width="40" stroke-linecap="round" fill="none"/><circle cx="170" cy="-120" r="34" fill="#fff" stroke="#2e1a3b" stroke-width="6"/></g>` : '';
+    g += animal(P.animal || 'perro', {x: 840, y: 620, s: .72, extra: hat}) + sparkle(560, 840, .9, '#ffd23f');
+    bg.innerHTML = g;
+  }
+};
+chrome();
+(LAYOUTS[P.tipo] || (() => W.push('Tipo desconocido: ' + P.tipo)))();
+window.READY = true;
+</script>
+</body>
+</html>

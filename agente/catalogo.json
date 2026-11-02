@@ -1,0 +1,71 @@
+{
+  "_nota": "Precios tomados de las publicaciones de @michiguau.pet (2025-2026). Confirmar con la clienta y actualizar aquí: el agente solo publica precios de este archivo.",
+  "_actualizado": "2026-11-01",
+  "productos": [
+    {
+      "id": "pelota-15",
+      "nombre": "Pelota olfativa 15 cm",
+      "precio": 7500,
+      "material": "Polar cosido, unida con plástico",
+      "medidas": "15 cm",
+      "fabricacion": "a pedido",
+      "notas": "Variedad de colores. Uso bajo supervisión."
+    },
+    {
+      "id": "pelota-20",
+      "nombre": "Pelota olfativa 20 cm",
+      "precio": 10500,
+      "material": "Polar cosido, unida con plástico",
+      "medidas": "20 cm",
+      "fabricacion": "a pedido",
+      "notas": "Variedad de colores. Uso bajo supervisión."
+    },
+    {
+      "id": "alfombra-mini-corazon",
+      "nombre": "Alfombra olfativa Mini Corazón",
+      "precio": 18990,
+      "material": "Polar, base antideslizante",
+      "medidas": "25 × 25 cm",
+      "fabricacion": "20 días hábiles",
+      "notas": "Colores rosado y amarillo. Uso bajo supervisión."
+    },
+    {
+      "id": "cuerda-1-5",
+      "nombre": "Cuerda de paseo 1,5 m",
+      "precio": 5000,
+      "material": "Cuerda con mosquetón",
+      "medidas": "1,5 m",
+      "fabricacion": "a pedido",
+      "notas": "Zona de agarre regulable y gancho para porta bolsas. 4 diseños."
+    },
+    {
+      "id": "cuerda-3",
+      "nombre": "Cuerda de paseo 3 m",
+      "precio": 7000,
+      "material": "Cuerda con mosquetón",
+      "medidas": "3 m",
+      "fabricacion": "a pedido",
+      "notas": "Zona de agarre regulable y gancho para porta bolsas. 5 diseños."
+    },
+    {
+      "id": "alfombra-carita-leon",
+      "nombre": "Alfombra olfativa Carita de León",
+      "precio": null,
+      "medidas": "50 × 50 cm",
+      "fabricacion": "20 días hábiles",
+      "notas": "Sin precio publicado: escribir 'Consulta precio por DM'."
+    },
+    {
+      "id": "lickmat",
+      "nombre": "LickMat (plato interactivo)",
+      "precio": null,
+      "fabricacion": "consultar",
+      "notas": "Reduce ansiedad, útil en baño, veterinario y corte de uñas. Sin precio publicado."
+    }
+  ],
+  "entregas": {
+    "metro": "Entrega gratis en estaciones de metro (Santiago)",
+    "envios": "Envíos a todo Chile",
+    "contacto": "DM de Instagram o WhatsApp (link en la bio)"
+  }
+}
