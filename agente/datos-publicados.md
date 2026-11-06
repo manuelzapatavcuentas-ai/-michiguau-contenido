@@ -9,3 +9,4 @@ El agente revisa esta lista antes de elegir un dato y agrega una fila después d
 | 2026-11-03 | gato | Los gatos también huelen con la boca: el órgano vomeronasal (de Jacobson) en el paladar; abrir la boca tras oler es la reacción de Flehmen | VCA Animal Hospitals | https://www.instagram.com/p/DfS3PcLmMJR/ |
 | 2026-11-04 | perro | Los perros tienen un tercer párpado (membrana nictitante) que protege y limpia el ojo | Merck Veterinary Manual | https://www.instagram.com/p/DfVb1TYmSfu/ |
 | 2026-11-05 | gato | Los bigotes (vibrisas) de los gatos detectan cambios leves en las corrientes de aire y les ayudan a orientarse y medir espacios | VCA Animal Hospitals | https://www.instagram.com/p/DfYAipnGcyY/ |
+| 2026-11-06 | perro | Los cachorros nacen sordos (oyen cerca de las 3 semanas) pero usan el olfato desde que nacen para encontrar a su mamá y su leche | American Kennel Club | https://www.instagram.com/p/DfalYVhHRdQ/ |
