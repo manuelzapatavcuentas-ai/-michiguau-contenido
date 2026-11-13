@@ -13,3 +13,4 @@ El agente revisa esta lista antes de elegir un dato y agrega una fila después d
 | 2026-11-08 | gato | Los gatos no son nocturnos sino crepusculares: están más activos al amanecer y al atardecer, cuando sus presas se mueven más | VCA Animal Hospitals | https://www.instagram.com/p/DfebL3ZoKMH/ |
 | 2026-11-09 | perro | Los perros ven colores, sobre todo azul y amarillo: tienen dos tipos de conos (las personas tres), así que el rojo y el verde les parecen tonos café o grises | American Kennel Club | https://www.instagram.com/p/DfiTw5NjxO_/ |
 | 2026-11-12 | gato | Los gatos duermen entre 12 y 16 horas al día; así guardan energía para cazar y jugar | Hill's Pet Nutrition | https://www.instagram.com/p/DfpbQuwHe0_/ |
+| 2026-11-13 | perro | Los perros adultos tienen unos 42 dientes (las personas unos 32); de cachorros tienen unos 28 de leche, que cambian hacia los 6 meses | American Kennel Club | https://www.instagram.com/p/Dfsm9d_nUPv/ |
