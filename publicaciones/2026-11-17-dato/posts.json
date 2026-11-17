@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": "01-dato-perros-oido",
+      "tipo": "dato",
+      "fondo": "amarillo",
+      "acento": "morado",
+      "pildora": "¿Sabías que...?",
+      "titulo": "Tu perro oye sonidos *muy agudos* que tú no oyes",
+      "texto": "Capta sonidos de unos 47.000 Hz o más. Las personas oímos solo hasta unos 20.000 Hz.",
+      "fuente": "American Kennel Club",
+      "animal": "perro_cafe",
+      "cta": "Consiente a tu perrito",
+      "cta_sub": "Consulta por DM",
+      "caption": "¿Sabías que...? 🐶👂\n\nLos perros oyen sonidos tan agudos que para nosotros son puro silencio 🤫 Captan frecuencias de unos 47.000 Hz o más, ¡y las personas solo llegamos a unos 20.000 Hz! 🤯\n\nPor eso a veces levantan las orejas o se ponen alerta \"por nada\": seguro escucharon algo que tú no ✨\n\n¿Tu perrito reacciona a ruidos que tú ni notas? Cuéntanos en los comentarios 👇\n\n#michiguaupet #datoscuriosos #chile #perros #vidadeperros #perrosygatos"
+    }
+  ]
+}
