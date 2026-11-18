@@ -18,3 +18,4 @@ El agente revisa esta lista antes de elegir un dato y agrega una fila después d
 | 2026-11-15 | perro | La nariz de cada perro tiene un diseño de líneas y pliegues único, como una huella digital; está formado hacia los 2 meses de vida | VCA Animal Hospitals | https://www.instagram.com/p/DfxwkKRHeXM/ |
 | 2026-11-16 | gato | Los gatos adultos casi no se maúllan entre ellos, solo a las personas; de gatitos maúllan a su mamá cuando tienen frío o hambre | ASPCA | https://www.instagram.com/p/Df0V80YHWCK/ |
 | 2026-11-17 | perro | Los perros oyen sonidos muy agudos, de unos 47.000 Hz o más (las personas hasta unos 20.000 Hz) | American Kennel Club | https://www.instagram.com/p/Df26Eepna8C/ |
+| 2026-11-18 | gato | Los gatos dedican entre un 30 y un 50% de su día a acicalarse | Cornell Feline Health Center | https://www.instagram.com/p/Df5e9uJHRKY/ |
