@@ -19,3 +19,4 @@ El agente revisa esta lista antes de elegir un dato y agrega una fila después d
 | 2026-11-16 | gato | Los gatos adultos casi no se maúllan entre ellos, solo a las personas; de gatitos maúllan a su mamá cuando tienen frío o hambre | ASPCA | https://www.instagram.com/p/Df0V80YHWCK/ |
 | 2026-11-17 | perro | Los perros oyen sonidos muy agudos, de unos 47.000 Hz o más (las personas hasta unos 20.000 Hz) | American Kennel Club | https://www.instagram.com/p/Df26Eepna8C/ |
 | 2026-11-18 | gato | Los gatos dedican entre un 30 y un 50% de su día a acicalarse | Cornell Feline Health Center | https://www.instagram.com/p/Df5e9uJHRKY/ |
+| 2026-11-20 | perro | Los perros exhalan por las ranuras laterales de la nariz: el aire viejo sale por los costados y los olores nuevos entran por delante, así siguen oliendo sin parar | The Animal Medical Center | https://www.instagram.com/p/Df8-47Djr-S/ |
