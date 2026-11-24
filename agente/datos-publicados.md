@@ -24,3 +24,4 @@ El agente revisa esta lista antes de elegir un dato y agrega una fila después d
 | 2026-11-21 | perro | Los cachorros dálmatas nacen completamente blancos; las manchas empiezan a aparecer cerca de las 2 semanas y siguen desarrollándose por más de un año | American Kennel Club | https://www.instagram.com/p/DgBb53Fj_RD/ |
 | 2026-11-22 | gato | Los gatos tienen 18 dedos: cinco en cada pata delantera y cuatro en cada pata trasera; los polidáctilos nacen con dedos de más | PetMD | https://www.instagram.com/p/DgDyJ9sD4eT/ |
 | 2026-11-23 | perro | Los perros tienen hasta 300 millones de receptores olfativos (las personas unos 6 millones) | American Kennel Club | https://www.instagram.com/p/DgGW5wMEqJe/ |
+| 2026-11-24 | gato | Con poca luz, los gatos ven unas 6 veces mejor que las personas (entre 5,5 y 7): tienen más bastones en la retina y el tapetum lucidum, que refleja la luz; en oscuridad total no ven | PetMD | https://www.instagram.com/p/DgI7tDrnWX5/ |
